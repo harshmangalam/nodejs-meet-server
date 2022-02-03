@@ -31,15 +31,15 @@ io.on("connection", (socket) => {
   });
 
   socket.on("offer", (payload) => {
-    io.to(payload.target).emit("offer", payload);
+    io.to(payload.to).emit("offer", payload);
   });
 
   socket.on("answer", (payload) => {
-    io.to(payload.target).emit("answer", payload);
+    io.to(payload.to).emit("answer", payload);
   });
 
   socket.on("ice-candidate", (payload) => {
-    io.to(payload.target).emit("ice-candidate", payload);
+    io.to(payload.to).emit("ice-candidate", payload);
   });
 
   socket.on("remote-mic-toggle",payload=>{
